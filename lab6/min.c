@@ -3,22 +3,20 @@
 
 int main(int argc,char *argv[])
 {
-    int i=0;
+    int i=1;int j=0;
+    int m=0; 
     double a[100];
-    a[0]=atof(argv[1]);
-    a[1]=atof(argv[2]);
-    a[2]=atof(argv[3]);
-    a[3]=atof(argv[4]);
-    a[4]=atof(argv[5]);
-    a[5]=atof(argv[6]);
-    double min=a[0];
-
-    for(i=0;i<6;i++){
-        if(min>a[i]){
-            min=a[i];
+    int temp;
+    for(i=1;i<argc;i++,j++){
+    a[j]=atof(argv[i]);
+    }
+    for(m=0;m<argc-2;m++){
+        if(a[m]<a[m+1]){
+            temp=a[m]; a[m]=a[m+1];a[m+1]=temp;
         }
     }
-    printf("%.2f",min);
+    printf("The min is%d\n",temp);
+    return 0;
 }
 
 
